@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Detalhes do Contato</title>
+</head>
+<body>
+    <h1>{{ agenda.nome }}</h1>
+    <p><strong>Telefone:</strong> {{ agenda.telefone }}</p>
+    <p><strong>Email:</strong> {{ agenda.email }}</p>
+    <p><strong>Endereço:</strong> {{ agenda.endereco }}</p>
+
+    <a href="{% url 'lista_contatos' %}">Voltar</a>
+</body>
+</html>
