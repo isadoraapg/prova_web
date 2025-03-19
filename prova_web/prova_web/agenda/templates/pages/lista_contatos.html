@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Lista de Contatos</title>
+</head>
+<body>
+    <h1>Lista de Contatos</h1>
+    <ul>
+        {% for contato in contatos %}
+            <li>
+                <a href="{% url 'agenda_detalhe' contato.id %}">{{ contato.nome }}</a>
+            </li>
+        {% empty %}
+            <p>Nenhum contato encontrado.</p>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Voltar</a>
+</body>
+</html>
